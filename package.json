@@ -1,0 +1,23 @@
+{
+  "name": "ficha1-tdw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "db": "^6.0.3",
+    "express": "^5.3.0",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.17.0",
+    "mongoose": "^9.12.1",
+    "nodemon": "^3.1.14",
+    "Router": "^2.1.0"
+  }
+}
