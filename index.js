@@ -5,7 +5,7 @@ const basicAuth = require("./Middleware/auth.js");
 const logger = require("./Middleware/logger.js");
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 
@@ -20,7 +20,7 @@ const authMiddleware = function (req, res, next) {
 };
 
 // Ligar ao MongoDB
-const URL = "mongodb://127.0.0.1:27017/rede_carregamento";
+const URL = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/rede_carregamento";
 mongoose.connect(URL)
     .then(() => {
         console.log("Ligado ao MongoDB com sucesso."); 
@@ -32,4 +32,5 @@ mongoose.connect(URL)
     })
     .catch((erro) => {
         console.error("Erro ao ligar ao MongoDB:", erro.message);
+        process.exit(1);
     });
